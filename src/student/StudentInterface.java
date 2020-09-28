@@ -34,6 +34,7 @@ public class StudentInterface {
         scan.nextLine();
         System.out.println("\n---------------------------\n");
         
+        while(true){
         System.out.print("Enter name for second student: ");
         name = scan.nextLine();
         stu2.setName(name);
@@ -41,6 +42,19 @@ public class StudentInterface {
             System.out.format("Enter test score %d for %s> ",i,stu2.getName());
             score = scan.nextInt();
             stu2.setScore(1, score);
+        }
+        String errormsg = stu2.validateData();
+        if (errormsg == null){
+            break;
+        } else {
+            System.out.println(errormsg);
+        }
+        }
+        
+        
+        if(stu1.getAverage()>stu2.getAverage()){
+        }
+        else{
         }
         
         
