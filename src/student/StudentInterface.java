@@ -53,8 +53,17 @@ public class StudentInterface {
         
         
         if(stu1.getAverage()>stu2.getAverage()){
+            System.out.format("%s has the highest average with %.2f",stu1.getName(),stu1.getAverage());
         }
         else{
+            System.out.format("%s has the highest average with %.2f",stu2.getName(),stu2.getAverage());
+        }
+        
+        if(stu1.getHighScore()>stu2.getHighScore()){
+            System.out.format("%s has the highest score with %d",stu1.getName(),stu1.getHighScore());
+        }
+        else{
+            System.out.format("%s has the highest score with %d",stu2.getName(),stu2.getHighScore());
         }
         
         
@@ -62,8 +71,8 @@ public class StudentInterface {
         
         
         System.out.println("\n---------------------------\n");
-        System.out.println("stu1");
-        System.out.println("stu2");
+        System.out.println(stu1);
+        System.out.println(stu2);
     }
     
 }
