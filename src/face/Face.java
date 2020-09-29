@@ -49,9 +49,14 @@ public class Face {
     }
     public void erase(){
         g.setColor(Color.white);
-        g.fillRect(xPos-10, yPos-10,diameter + 20, diameter + 20);
+        g.fillRect(xPos-10, yPos-10,diameter+20, diameter+20);
     }
-    public void move(int x,int y){
-        
+    public void move(int newx,int newy){
+        newy = yPos;
+        newx = xPos;
+    }
+    
+    public void newColor(Color c){
+        color = c;
     }
 }

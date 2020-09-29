@@ -1,6 +1,8 @@
 
 package face;
 
+import java.awt.Color;
+import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
 
@@ -42,11 +44,16 @@ public class FaceMaker extends javax.swing.JFrame {
         });
 
         btn_color.setText("Change Color");
+        btn_color.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_colorActionPerformed(evt);
+            }
+        });
 
         btn_mood.setText("Toggle Mood");
 
+        facePanel.setBackground(new java.awt.Color(255, 255, 255));
         facePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        facePanel.setOpaque(false);
 
         javax.swing.GroupLayout facePanelLayout = new javax.swing.GroupLayout(facePanel);
         facePanel.setLayout(facePanelLayout);
@@ -125,6 +132,13 @@ public class FaceMaker extends javax.swing.JFrame {
         f.move(newx,newy);
         f.draw();
     }//GEN-LAST:event_btn_moveActionPerformed
+
+    private void btn_colorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_colorActionPerformed
+        Color newColor = JColorChooser.showDialog(this,"Pick new dice color",Color.red);
+        f.newColor(newColor);
+        f.erase();
+        f.draw();
+    }//GEN-LAST:event_btn_colorActionPerformed
 
     
     public static void main(String args[]) {
