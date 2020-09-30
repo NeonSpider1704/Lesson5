@@ -51,9 +51,9 @@ public class Face {
         g.setColor(Color.white);
         g.fillRect(xPos-10, yPos-10,diameter+20, diameter+20);
     }
-    public void move(int newx,int newy){
-        newy = yPos;
-        newx = xPos;
+    public void move(int x,int y){
+        y = yPos;
+        x = xPos;
     }
     
     public void newColor(Color c){
