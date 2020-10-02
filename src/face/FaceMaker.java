@@ -51,9 +51,13 @@ public class FaceMaker extends javax.swing.JFrame {
         });
 
         btn_mood.setText("Toggle Mood");
+        btn_mood.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_moodActionPerformed(evt);
+            }
+        });
 
         facePanel.setBackground(new java.awt.Color(255, 255, 255));
-        facePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout facePanelLayout = new javax.swing.GroupLayout(facePanel);
         facePanel.setLayout(facePanelLayout);
@@ -63,7 +67,7 @@ public class FaceMaker extends javax.swing.JFrame {
         );
         facePanelLayout.setVerticalGroup(
             facePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 325, Short.MAX_VALUE)
+            .addGap(0, 327, Short.MAX_VALUE)
         );
 
         btn_initial.setText("Set Initial Face");
@@ -112,7 +116,10 @@ public class FaceMaker extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_resizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resizeActionPerformed
-        
+        int newSize = Integer.parseInt(JOptionPane.showInputDialog(this, "Enter resize"));
+        f.erase();
+        f.resize(newSize);
+        f.draw();
     }//GEN-LAST:event_btn_resizeActionPerformed
 
     private void btn_initialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_initialActionPerformed
@@ -139,6 +146,12 @@ public class FaceMaker extends javax.swing.JFrame {
         f.erase();
         f.draw();
     }//GEN-LAST:event_btn_colorActionPerformed
+
+    private void btn_moodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_moodActionPerformed
+        f.erase();
+        f.toggleMood();
+        f.draw();
+    }//GEN-LAST:event_btn_moodActionPerformed
 
     
     public static void main(String args[]) {
